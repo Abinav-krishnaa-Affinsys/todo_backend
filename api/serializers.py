@@ -20,3 +20,9 @@ class TodoSerializer(serializers.ModelSerializer):
         'description'
         
     ]
+    validators = {
+        'title' : serializers .MinLengthValidator(5),
+        'description' : serializers .MinLengthValidator(10)
+    }
+    
+    
