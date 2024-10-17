@@ -10,6 +10,13 @@ class UserSerializer(serializers.ModelSerializer):
 class TodoSerializer(serializers.ModelSerializer):
     model = TodoModel
     fields = '__all__'
-    extra_kwargs = {
-        'user': {'required': False},
-    }
+    read_only_fields = [
+        'id'
+        'created_at'
+        'completed'
+    ]
+    write_only_fields = [
+        'title',
+        'description'
+        
+    ]
