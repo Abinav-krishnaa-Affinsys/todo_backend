@@ -1,6 +1,14 @@
 from django.urls import path
 
-# urlpatterns = [
+from .views import TodoViewset
 
-#     path('', views.index, name='index'),
-# ]
+urlpatterns = [
+    path('', TodoViewset.as_view(
+        {
+            'get': 'list',
+            'post': 'create'
+            
+        }
+    )),
+
+]
