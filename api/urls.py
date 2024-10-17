@@ -9,6 +9,4 @@ urlpatterns = [
             'post': 'create'
             
         }
-    )),
-
-]
+    ))
