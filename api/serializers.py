@@ -7,3 +7,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TodoSerializer(serializers.ModelSerializer):
+    model = TodoModel
+    fields = '__all__'
+    extra_kwargs = {
+        'user': {'required': False},
+    }
