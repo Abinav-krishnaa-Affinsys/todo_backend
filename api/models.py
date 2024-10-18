@@ -12,6 +12,7 @@ class User(models.Model):
         return self.username
 
 
+
 class TodoModel(models.Model):
 
     title = models.CharField(max_length=50 , primary_key= True)

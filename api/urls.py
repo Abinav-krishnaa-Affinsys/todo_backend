@@ -1,12 +1,13 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import TodoViewset,Registerview
 
-from .views import TodoViewset
+router = DefaultRouter()
+router.register(r'todos', TodoViewset, basename='todo')
 
 urlpatterns = [
-    path('', TodoViewset.as_view(
-        {
-            'get': 'list',
-            'post': 'create'
-            
-        }
-    ))
+    path('', include(router.urls)),
+    path('register/', Registerview.as_view(), name='register'),
+    
+]
+
